@@ -8,7 +8,7 @@ import { useState } from 'react'
 import { useRef } from 'react'
 import { useEffect } from 'react'
 import axios from "axios"
-import { ServerUrl } from '../App'
+import { SERVER_URL } from '../App'
 import { BsArrowRight } from 'react-icons/bs'
 
 function Step2Interview({ interviewData, onFinish }) {
@@ -251,7 +251,7 @@ function Step2Interview({ interviewData, onFinish }) {
     setIsSubmitting(true)
 
     try {
-      const result = await axios.post(ServerUrl + "/api/interview/submit-answer", {
+      const result = await axios.post(SERVER_URL + "/api/interview/submit-answer", {
         interviewId,
         questionIndex: currentIndex,
         answer,
@@ -291,7 +291,7 @@ setIsSubmitting(false)
     stopMic()
     setIsMicOn(false)
     try {
-      const result = await axios.post(ServerUrl+ "/api/interview/finish" , { interviewId} , {withCredentials:true})
+      const result = await axios.post(SERVER_URL+ "/api/interview/finish" , { interviewId} , {withCredentials:true})
 
       console.log(result.data)
       onFinish(result.data)

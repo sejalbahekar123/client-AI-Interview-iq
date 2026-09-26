@@ -36,7 +36,7 @@ function Navbar() {
         initial={{opacity:0 , y:-40}}
         animate={{opacity:1 , y:0}}
         transition={{duration: 0.3}}
-        className='w-full max-w-6xl bg-white rounded-[24px] shadow-sm border border-gray-200 px-8 py-4 flex justify-between items-center relative'>
+        className='w-full max-w-6xl bg-white rounded-3xl shadow-sm border border-gray-200 px-8 py-4 flex justify-between items-center relative'>
             <div className='flex items-center gap-3 cursor-pointer'>
                 <div className='bg-black text-white p-2 rounded-lg'>
                     <BsRobot size={18}/>
@@ -78,7 +78,8 @@ function Navbar() {
                         setShowUserPopup(!showUserPopup);
                         setShowCreditPopup(false)
                     }} className='w-9 h-9 bg-black text-white rounded-full flex items-center justify-center font-semibold'>
-                        {userData ? userData?.name.slice(0,1).toUpperCase() : <FaUserAstronaut size={16}/>}
+                        {/* {userData?userData.name?.slice(0,1).toUpperCase() : <FaUserAstronaut size={16}/>} */}
+                        {userData?.name ? userData.name.slice(0,1).toUpperCase() : <FaUserAstronaut size={16}/>}
                         
                     </button>
 
